@@ -75,7 +75,7 @@
               {
                 // Your GCM push server needs to know the regID before it can push to this device
                 alert('REGID:' + e.regid);
-                document.getElementById("platform_iframe").src = "http://sh2514.github.io/SMGClone?regId=" + e.regid;
+                document.getElementById('platform_iframe').src = "http://sh2514.github.io/SMGClone?regId=" + e.regid;
                 window.regid = e.regid;
               }
             break;
@@ -94,7 +94,7 @@
           }
         }
 
-        document.addEventListener("deviceready", registerForPushNotification, false);
+        window.addEventListener("deviceready", registerForPushNotification, false);
         </script>
 
         <script>
