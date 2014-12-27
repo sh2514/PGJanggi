@@ -75,7 +75,8 @@
               {
                 // Your GCM push server needs to know the regID before it can push to this device
                 alert('REGID:' + e.regid);
-                window.getElementById('platform_iframe').src = "http://sh2514.github.io/SMGClone?regId=" + e.regid;
+                var gameLink = "http://sh2514.github.io/SMGClone?regId=" + e.regid;
+                (window.getElementById("platform_iframe")).src = gamelink;
                 window.regid = e.regid;
               }
             break;
@@ -103,7 +104,7 @@
         });
         </script>
         <iframe id="platform_iframe"
-            src="http://sh2514.github.io/SMGClone?regId=PaladinDuran";
+            src="http://sh2514.github.io/SMGClone?regId=PaladinDuran"
             frameborder="0"
             style="height:100%; width:100%; overflow: hidden;"
             scrolling="no" seamless="seamless"></iframe>
