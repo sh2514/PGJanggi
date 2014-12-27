@@ -14,13 +14,13 @@
 
         <script>
         function successHandler (result) {
-          console.log('result = ' + result);
+            alert('result = ' + result);
         }
         function errorHandler (error) {
-            console.log('error = ' + error);
+            alert('error = ' + error);
         }
         function registerForPushNotification() {
-          console.log('registerForPushNotification for cordova.platformId:' + cordova.platformId);
+          alert('registerForPushNotification for cordova.platformId:' + cordova.platformId);
           var pushNotification = window.plugins.pushNotification;
           if ( cordova.platformId == 'android' || cordova.platformId == 'Android' || cordova.platformId == "amazon-fireos" ){
             pushNotification.register(
@@ -43,7 +43,7 @@
           }
         }
         // iOS
-        function onNotificationAPN(event) {
+        window.onNotificationAPN = function (event) {
           alert('RECEIVED:' + JSON.stringify(event));
           if ( event.alert )
           {
@@ -66,7 +66,7 @@
           document.getElementById("regIdTextarea").value = result;
         }
         // Android and Amazon Fire OS
-        function onNotification(e) {
+        window.onNotification = function (e) {
           alert('RECEIVED:' + JSON.stringify(e));
           switch( e.event )
           {
@@ -75,7 +75,7 @@
               {
                 // Your GCM push server needs to know the regID before it can push to this device
                 alert('REGID:' + e.regid);
-                document.getElementById('platform_iframe').src = "http://sh2514.github.io/SMGClone?regId=" + e.regid;
+                window.getElementById('platform_iframe').src = "http://sh2514.github.io/SMGClone?regId=" + e.regid;
                 window.regid = e.regid;
               }
             break;
