@@ -20,7 +20,7 @@
             console.log('error = ' + error);
         }
         function registerForPushNotification() {
-          lconsole.log('registerForPushNotification for cordova.platformId:' + cordova.platformId);
+          console.log('registerForPushNotification for cordova.platformId:' + cordova.platformId);
           var pushNotification = window.plugins.pushNotification;
           if ( cordova.platformId == 'android' || cordova.platformId == 'Android' || cordova.platformId == "amazon-fireos" ){
             pushNotification.register(
